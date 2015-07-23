@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 project = u'{{cookiecutter.project_name}}'
-copyright = u'XXXX {{cookiecutter.full_name}}'
-version = 'FIXME {{cookiecutter.release}}'
+copyright = u'{{cookiecutter.year}} {{cookiecutter.full_name}}'
+version = '{{cookiecutter.version}}'
 release = '{{cookiecutter.release}}'
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'alabaster']
