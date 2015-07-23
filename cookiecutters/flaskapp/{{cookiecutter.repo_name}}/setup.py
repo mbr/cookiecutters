@@ -21,10 +21,12 @@ setup(
     license='MIT',
     packages=find_packages(exclude=['tests']),
     install_requires=['flask'],
+{%- if cookiecutter.flask_cli == 'yes' %}
     entry_points={
         'console_scripts': [
             '{{cookiecutter.repo_name}} = {{cookiecutter.repo_name}}.cli:cli',
         ],
+{%- endif %}
     },
     classifiers=[
         'Programming Language :: Python :: 2',

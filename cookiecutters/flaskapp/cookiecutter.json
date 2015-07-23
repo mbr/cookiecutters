@@ -1,4 +1,5 @@
 {
   "repo_name": "flaskapp",
-  "description": ""
+  "description": "",
+  "flaskapp_cli": "yes"
 }
