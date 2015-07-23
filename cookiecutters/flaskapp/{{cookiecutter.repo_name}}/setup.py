@@ -23,7 +23,7 @@ setup(
     install_requires=[],
     entry_points={
         'console_scripts': [
-            'commandname = package:func',
+            '{{cookiecutter.repo_name}} = {{cookiecutter.repo_name}}.cli:cli',
         ],
     },
     classifiers=[
