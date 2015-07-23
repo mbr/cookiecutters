@@ -20,7 +20,7 @@ setup(
     url='http://github.com/mbr/{{cookiecutter.repo_name}}',
     license='MIT',
     packages=find_packages(exclude=['tests']),
-    install_requires=[],
+    install_requires=['flask'],
     entry_points={
         'console_scripts': [
             '{{cookiecutter.repo_name}} = {{cookiecutter.repo_name}}.cli:cli',
