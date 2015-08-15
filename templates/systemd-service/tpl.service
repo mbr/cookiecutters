@@ -1,0 +1,17 @@
+[Unit]
+Description={{description}}
+
+{%- if requires %}
+After={{requires}}.service
+Requires={{requires}}.service
+{%- endif %}
+
+[Service]
+ExecStart={{exec_start}}
+RestartSec={{restart_sec|default(1)}}
+{%- if restart_sec %}
+Restart=always
+{%- endif %}
+
+[Install]
+WantedBy={{target|default('multi-user')}}.target
