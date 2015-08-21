@@ -30,7 +30,7 @@ setup(
     {%- if entry_point %}
     entry_points={
         'console_scripts': [
-            '{{entry_point}} = {{project_name}}:cli.cli',
+            '{{entry_point}} = {{project_name}}.cli:cli',
         ],
     },
     {%- endif %}
