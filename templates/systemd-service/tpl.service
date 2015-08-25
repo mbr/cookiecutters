@@ -8,10 +8,10 @@ Requires={{requires}}.service
 
 [Service]
 ExecStart={{exec_start}}
-RestartSec={{restart_sec|default(1)}}
+RestartSec={{restart_sec}}
 {%- if restart_sec %}
 Restart=always
 {%- endif %}
 
 [Install]
-WantedBy={{target|default('multi-user')}}.target
+WantedBy={{target)}}.target
