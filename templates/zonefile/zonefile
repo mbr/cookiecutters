@@ -1,0 +1,34 @@
+$TTL                   {{time_to_live}}
+$ORIGIN                {{fqdn}}.
+
+{%- with %}
+{%- set email = admin_email if '@' in admin_email else admin_email + '@' + fqdn %}
+{%- set left, right = email.split('@', 1) %}
+{%- set ns0 = nameservers.split()[0] if nameservers else fqdn %}
+@                      IN  SOA    {{ns0}}. {{left|replace('.', '\\.')}}.{{right}}. (
+  {{utcnow}} ; serial
+  {{refresh}} ; refresh
+  {{retry}} ; retry
+  {{expire}} ; expire
+  {{ttl}} ; ttl
+)
+{% endwith %}
+@                      IN  A      {{a_record}}
+{% for mx in mailservers.split() %}
+{%- if mx == 'GMAIL' %}
+; mail handled by google apps
+@                      IN  MX     1 ASPMX.L.GOOGLE.COM.
+@                      IN  MX     5 ALT1.ASPMX.L.GOOGLE.COM.
+@                      IN  MX     5 ALT2.ASPMX.L.GOOGLE.COM.
+@                      IN  MX     10 ALT3.ASPMX.L.GOOGLE.COM.
+@                      IN  MX     10 ALT4.ASPMX.L.GOOGLE.COM.
+{%- else %}
+@                      IN  MX     {{5 * loop.index}} {{mx}}.
+{%- endif %}
+{%- endfor %}
+{%- for ns in nameservers.split() %}
+@                      IN  NS     {{ns}}.
+{%- endfor %}
+{%- for alias in root_aliases.split() %}
+{{alias}}              IN  CNAME  @
+{%- endfor %}
