@@ -1,0 +1,8 @@
+sudo: false
+language: {{language}}
+env:
+{%- for env in tox_env.split(',') %}
+- TOXENV={{env.strip()}}
+{%- endfor %}
+install: {{install}}
+script: {{script}}
