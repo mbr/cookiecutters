@@ -1,0 +1,14 @@
+{
+  "name": "{{project_name}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "license": "{{license}}",
+  "author": {
+    "name": "{{user_full_name}}",
+    "email": "{{user_email}}",
+  },
+  "private": {{private}},
+  "dependencies": {
+
+  }
+}
