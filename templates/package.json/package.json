@@ -5,7 +5,7 @@
   "license": "{{license}}",
   "author": {
     "name": "{{user_full_name}}",
-    "email": "{{user_email}}",
+    "email": "{{user_email}}"
   },
   "private": {{private}},
   "dependencies": {
