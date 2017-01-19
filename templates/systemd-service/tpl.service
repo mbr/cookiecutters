@@ -14,4 +14,4 @@ Restart=always
 {%- endif %}
 
 [Install]
-WantedBy={{target}}.target
+WantedBy={{target}}
