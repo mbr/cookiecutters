@@ -12,6 +12,10 @@ RestartSec={{restart_sec}}
 {%- if restart_sec %}
 Restart=always
 {%- endif %}
+# User=
+# Group=
+# WorkingDirectory=
+
 
 [Install]
 WantedBy={{target}}
