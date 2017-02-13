@@ -2,8 +2,8 @@
 Description={{description}}
 
 {%- if requires %}
-After={{requires}}.service
-Requires={{requires}}.service
+After={{requires}}
+Requires={{requires}}
 {%- endif %}
 
 [Service]
